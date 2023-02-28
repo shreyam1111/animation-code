@@ -1,0 +1,81 @@
+import simplegui
+
+width = 600
+height = 600
+x = -50
+y = -100
+
+
+
+def draw_handler(canvas):
+    global x
+    x = x + 5
+    
+    
+    canvas.draw_circle((width/2, height/2), width/2 - 50, 10, "Yellow", "Yellow")
+    canvas.draw_line((200,400),(400,400),6,"Black")
+    canvas.draw_line((150,250),(250,250),6,"Black")
+    canvas.draw_line((320,250),(420,250),6,"Black")
+    canvas.draw_line((170,200),(250,200),3,"Black")
+    canvas.draw_line((340,200),(420,200),3,"Black")
+    canvas.draw_polygon([(0,400),(600,400),(600,600),(0,600)],7,"black","darkblue")
+    
+    #frame 1 sheep  
+    for i in range(2):
+        canvas.draw_circle((x - 10,150),50,2,"White","Black")
+        canvas.draw_circle((x - 100,150),50,1,"black","White")
+        canvas.draw_circle((x - 50,150),50,1,"black","White")
+        canvas.draw_circle((x - 50,130),50,1,"black","White")
+                        
+        canvas.draw_circle((x - 310,150),50,2,"White","Black")
+        canvas.draw_circle((x - 400,150),50,1,"black","White")
+        canvas.draw_circle((x - 350,150),50,1,"black","White")
+        canvas.draw_circle((x - 350,130),50,1,"black","White")
+            
+        canvas.draw_circle((x - 610,150),50,2,"White","Black")
+        canvas.draw_circle((x - 700,150),50,1,"black","White")
+        canvas.draw_circle((x - 650,150),50,1,"black","White")
+        canvas.draw_circle((x - 650,130),50,1,"black","White")
+        
+        #frame 2 planets
+        canvas.draw_circle((x - 1500,150),50,2,"Black","Yellow")
+        canvas.draw_circle((x - 1800,150),50,2,"Black","Red")
+        canvas.draw_circle((x - 2100,150),50,2,"Black","Darkblue")
+
+        #frame 3 clouds
+        canvas.draw_circle((x - 10 - 2390,150),50,2,"White","white")
+        canvas.draw_circle((x - 100 - 2390,150),50,1,"white","White")
+        canvas.draw_circle((x - 50 - 2390,150),50,1,"white","White")
+        canvas.draw_circle((x - 50 - 2390,130),50,1,"white","White")
+        canvas.draw_circle((x - 310 - 2390,150),50,2,"White","white")
+        canvas.draw_circle((x - 400 - 2390,150),50,1,"white","White")
+        canvas.draw_circle((x - 350 - 2390,150),50,1,"white","White")
+        canvas.draw_circle((x - 350 - 2390,130),50,1,"white","White")
+        canvas.draw_circle((x - 610 - 2390,150),50,2,"White","white")
+        canvas.draw_circle((x - 700 - 2390,150),50,1,"white","White")
+        canvas.draw_circle((x - 650 - 2390,150),50,1,"white","White")
+        canvas.draw_circle((x - 650 - 2390,130),50,1,"white","White")
+        
+        
+        #frame 4 bus
+        canvas.draw_polygon([(x - 610 - 2790,100),(x-610-2990,100),(x - 610 - 2990,200),(x - 610 - 2790,200)],4,"black","red")
+        canvas.draw_polygon([(x - 610 - 2800,100),(x-610-2890,100),(x - 610 - 2890,150),(x - 610 - 2800,150)],4,"black","lightblue")
+        canvas.draw_circle((x - 610 - 2790,200),20,2,"white","Black")
+        canvas.draw_circle((x - 610 - 2990,200),20,2,"white","black")
+
+        #frame 5 car
+        for i in range(2):
+            canvas.draw_polygon([(x - 610 - 2790 - 2300,100),(x-610-2890 - 2300,100),(x - 610 - 2890- 2300,200),(x - 610 - 2790- 2300,200)],4,"black","blue")
+            canvas.draw_polygon([(x - 610 - 2800- 2300,100),(x-610-2890- 2300,100),(x - 610 - 2890- 2300,150),(x - 610 - 2800- 2300,150)],4,"black","lightblue")
+            canvas.draw_circle((x - 610 - 2790- 2300,200),20,2,"white","Black")
+            canvas.draw_circle((x - 610 - 2990- 2220,200),20,2,"white","black")
+            
+        #frame 6 car2
+        canvas.draw_polygon([(x - 610 - 2790 - 2900,80),(x-610-2890 - 2900,80),(x - 610 - 2890- 2900,200),(x - 610 - 2790- 2900,200)],4,"black","yellow")
+        canvas.draw_polygon([(x - 610 - 2800- 2900,100),(x-610-2890- 2900,100),(x - 610 - 2890- 2900,150),(x - 610 - 2800- 2900,150)],4,"black","lightblue")
+        canvas.draw_circle((x - 610 - 2790- 2900,200),20,2,"white","Black")
+        canvas.draw_circle((x - 610 - 2990- 2820,200),20,2,"white","black")
+       
+frame = simplegui.create_frame('Counting Sheep', 600, 600)
+frame.set_draw_handler(draw_handler)
+frame.start()
